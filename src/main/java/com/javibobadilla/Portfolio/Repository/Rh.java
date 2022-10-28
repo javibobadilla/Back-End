@@ -4,10 +4,6 @@ import com.javibobadilla.Portfolio.Entity.h;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- *
- * @author Usuario
- */
 public interface Rh extends JpaRepository<h, Integer>{
     Optional<h> findByNombre(String nombre);
     public boolean existsByNombre(String nombre);

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("explab")
+@RequestMapping("/explab")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CExperiencia {
     @Autowired
@@ -44,7 +44,7 @@ public class CExperiencia {
     public ResponseEntity<?> create(@RequestBody dtoExperiencia dtoexp){
         if(StringUtils.isBlank(dtoexp.getNombreE()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        if(sExperiencia.existsNombreE(dtoexp.getNombreE()))
+        if(sExperiencia.existsByNombreE(dtoexp.getNombreE()))
             return new ResponseEntity(new Mensaje("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
         
         Experiencia experiencia= new Experiencia(dtoexp.getNombreE(), dtoexp.getDescripcionE());

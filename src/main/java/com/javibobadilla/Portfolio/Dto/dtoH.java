@@ -1,4 +1,3 @@
-
 package com.javibobadilla.Portfolio.Dto;
 
 import javax.validation.constraints.NotBlank;

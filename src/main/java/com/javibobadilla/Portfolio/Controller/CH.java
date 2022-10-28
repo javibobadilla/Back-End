@@ -21,9 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/skill")
+@RequestMapping("/h")
 public class CH {
-
     @Autowired
     Sh sh;
 
@@ -68,17 +67,14 @@ public class CH {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoH dtoh) {
-        //Validamos si existe el ID
-        if (!sh.existsById(id)) {
+                if (!sh.existsById(id)) {
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         }
-        //Compara nombre de skills
-        if (sh.existsByNombre(dtoh.getNombre()) && sh.getByNombre(dtoh.getNombre()).get()
+               if (sh.existsByNombre(dtoh.getNombre()) && sh.getByNombre(dtoh.getNombre()).get()
                 .getId() != id) {
             return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
         }
-        //No puede estar vacio
-        if (StringUtils.isBlank(dtoh.getNombre())) {
+               if (StringUtils.isBlank(dtoh.getNombre())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
 
