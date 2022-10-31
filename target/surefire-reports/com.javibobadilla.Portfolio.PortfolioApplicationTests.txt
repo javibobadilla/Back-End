@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.javibobadilla.Portfolio.PortfolioApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 72.705 s - in com.javibobadilla.Portfolio.PortfolioApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 41.137 s - in com.javibobadilla.Portfolio.PortfolioApplicationTests
